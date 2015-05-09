@@ -13,10 +13,7 @@
                 </section>
 
                 <section>
-                    (The revolution image goes here)
-                </section>
-
-                <section>
+                    <h2>Viva la Revolucion</h2>
                     <ul>
                         <li>Use Components!</li>
                         <li>Build Components!</li>
@@ -25,8 +22,17 @@
                 </section>
 
                 <section>
-                    <section>Use Components!</section>
-                    <section>Vertical Slide 2</section>
+                    <section><h2>Use Components!</h2></section>
+                    <section>
+                        <p>Just import and use</p>
+                        <pre><code>
+&lt;!-- Import element -->
+&lt;link rel="import" href="google-map.html">
+
+&lt;!-- Use element -->
+&lt;google-map lat="37.790" long="-122.390">&lt;/google-map>
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section>
@@ -40,12 +46,56 @@
                             <li class="fragment">Sandboxes CSS and Javascript</li>
                         </ul>
                     </section>
+                    <section>
+                        Let's take a peek inside of the shadow DOM.
+                    </section>
+                </section>
+
+                <section>
+                    <section><h2>Build Components!</h2></section>
+                    <section>
+                        <pre><code>
+&lt;!-- Define element -->
+&lt;polymer-element name="my-counter" attributes="counter">
+  &lt;template>
+    &lt;style> /*...*/ &lt;/style>
+    &lt;div id="label">&lt;content>&lt;/content>&lt;/div>
+    Value: &lt;span id="counterVal">{{counter}}&lt;/span>&lt;br>
+    &lt;button on-tap="{{increment}}">Increment</button>
+  &lt;/template>
+  &lt;script>
+    Polymer({
+      counter: 0, // Default value
+      counterChanged: function() {
+        this.$.counterVal.classList.add('highlight');
+      },
+      increment: function() {
+        this.counter++;
+      }
+    });
+  &lt;/script>
+&lt;/polymer-element>
+
+&lt;!-- Use element -->
+&lt;my-counter counter="10">Points</my-counter>
+                        </code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section><h2>Build an App!</h2></section>
+                    <section>
+                        <img src="https://imgs.xkcd.com/comics/listen_to_yourself.png"></img>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Join us later today for a help session.</h2>
                 </section>
             </div>
         </div>
-    </body>
     <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="reveal.js"></script>
     <script>
         Reveal.initialize({
             controls: true,
@@ -74,4 +124,5 @@
             parallaxBackgroundSize: ''
         });
     </script>
+    </body>
 </html>
